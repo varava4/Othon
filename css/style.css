@@ -728,38 +728,13 @@ h6 {
 }
 .tabs__body {
   overflow: hidden;
-  visibility: hidden
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s ease-in-out
 }
 .tabs__body.active {
-  visibility: visible
-}
-.tabs__body.active .tabs__body-text {
-  transition: opacity .5s ease-in-out;
-  opacity: .8
-}
-.tabs__body.active .tabs__body-image-box {
-  -webkit-animation: tab-img .3s linear;
-  animation: tab-img .3s linear
-}
-@-webkit-keyframes tab-img {
-  0% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%)
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
-  }
-}
-@keyframes tab-img {
-  0% {
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%)
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
-  }
+  visibility: visible;
+  opacity: 1
 }
 .tabs__inner {
   display: flex;
@@ -798,7 +773,7 @@ h6 {
   fill: #f2683c
 }
 .tabs__body-text {
-  opacity: 0
+  opacity: .8
 }
 .tabs__body-text p:not(:last-child) {
   margin-bottom: 1.25rem
