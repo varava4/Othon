@@ -366,6 +366,10 @@ h6 {
 .page__careers {
   border-bottom: .0625rem solid #fff
 }
+.page ::selection {
+  background-color: #f2683c;
+  color: #fff
+}
 .home__container {
   padding-left: 0;
   padding-right: 0
@@ -730,9 +734,10 @@ h6 {
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
-  transition: opacity .5s ease-in-out
+  transition: opacity .6s ease-in-out
 }
 .tabs__body.active {
+  transition: opacity .6s ease-in-out;
   visibility: visible;
   opacity: 1
 }
