@@ -3886,25 +3886,28 @@
         muteButton.addEventListener("click", (() => {
             if (video.muted) video.muted = false; else video.muted = true;
         }));
-        const tabButtons = document.querySelectorAll(".tabs__title");
-        const script_tabs = document.querySelectorAll(".tabs__body");
-        tabButtons.forEach((button => {
-            button.addEventListener("click", (() => {
-                tabButtons.forEach((btn => btn.classList.remove("active")));
-                script_tabs.forEach((tab => {
-                    tab.classList.remove("active");
-                    tab.style.display = "none";
-                }));
-                button.classList.add("active");
-                const activeTab = document.getElementById(button.getAttribute("data-tab"));
-                setTimeout((() => {
-                    activeTab.style.display = "block";
+        const elementsWithDataTabs = document.querySelectorAll("[data-tabs]");
+        if (elementsWithDataTabs.length > 0) {
+            const tabButtons = document.querySelectorAll(".tabs__title");
+            const tabs = document.querySelectorAll(".tabs__body");
+            tabButtons.forEach((button => {
+                button.addEventListener("click", (() => {
+                    tabButtons.forEach((btn => btn.classList.remove("active")));
+                    tabs.forEach((tab => {
+                        tab.classList.remove("active");
+                        tab.style.display = "none";
+                    }));
+                    button.classList.add("active");
+                    const activeTab = document.getElementById(button.getAttribute("data-tab"));
                     setTimeout((() => {
-                        activeTab.classList.add("active");
-                    }), 10);
-                }), 10);
+                        activeTab.style.display = "block";
+                        setTimeout((() => {
+                            activeTab.classList.add("active");
+                        }), 10);
+                    }), 100);
+                }));
             }));
-        }));
+        }
         window["FLS"] = true;
         addLoadedClass();
         menuInit();
