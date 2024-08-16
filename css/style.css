@@ -83,6 +83,10 @@ h6 {
   opacity: 1;
   transition: opacity .2s
 }
+body ::selection {
+  background-color: #f2683c;
+  color: #fff
+}
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -365,10 +369,6 @@ h6 {
 }
 .page__careers {
   border-bottom: .0625rem solid #fff
-}
-.page ::selection {
-  background-color: #f2683c;
-  color: #fff
 }
 .home__container {
   padding-left: 0;
