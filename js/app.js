@@ -3884,7 +3884,15 @@
         });
         observer.observe(video);
         muteButton.addEventListener("click", (() => {
-            if (video.muted) video.muted = false; else video.muted = true;
+            if (video.muted) {
+                video.muted = false;
+                muteButton.classList.remove("about__sound-off");
+                muteButton.classList.add("about__sound-on");
+            } else {
+                video.muted = true;
+                muteButton.classList.remove("about__sound-on");
+                muteButton.classList.add("about__sound-off");
+            }
         }));
         const elementsWithDataTabs = document.querySelectorAll("[data-tabs]");
         if (elementsWithDataTabs.length > 0) {
