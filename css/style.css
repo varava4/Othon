@@ -638,8 +638,8 @@ body ::selection {
   object-fit: cover;
   border-radius: 1.25rem
 }
-.services__slide-text {
-  background: #fff
+.services__slide-text p {
+  opacity: .8
 }
 .services__slide-text p:not(:last-child) {
   margin-bottom: 1.25rem
@@ -648,7 +648,7 @@ body ::selection {
   display: inline-flex;
   overflow: visible;
   position: absolute;
-  z-index: 5;
+  z-index: 7;
   bottom: 2.0625rem;
   right: 2.0625rem
 }
@@ -907,7 +907,7 @@ body ::selection {
     display: none
   }
 }
-@media (min-width:81.25em) {
+@media (min-width:81.24875em) {
   .services__slide-image img {
     aspect-ratio: 357/735
   }
@@ -1343,9 +1343,12 @@ body ::selection {
     height: 1.8125rem
   }
 }
-@media (max-width:81.25em) {
+@media (max-width:81.24875em) {
   .services__slide-image-box {
     flex-direction: column
+  }
+  .services__slide-text {
+    padding: 1.875rem 1.25rem 4.9375rem 1.25rem
   }
 }
 @media (max-width:61.99875em) {
@@ -1407,8 +1410,21 @@ body ::selection {
     background-color: #18306c;
     opacity: .2
   }
+  .services__slide-image-box::before {
+    content: "";
+    position: absolute;
+    z-index: 6;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #18306c;
+    opacity: .8;
+    border-radius: 1.25rem
+  }
   .services__slide-image img {
     position: absolute;
+    z-index: 5;
     top: 0;
     left: 0;
     width: 100%;
@@ -1419,6 +1435,11 @@ body ::selection {
   }
   .services__slide-text {
     padding-right: .0000000625rem
+  }
+  .services__slide-text {
+    position: relative;
+    z-index: 6;
+    color: #fff
   }
   .control-services__title {
     row-gap: 1.875rem

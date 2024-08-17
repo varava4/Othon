@@ -4161,7 +4161,7 @@
                     observeParents: true,
                     slidesPerView: 1,
                     spaceBetween: 100,
-                    speed: 1e3,
+                    speed: 800,
                     parallax: true,
                     effect: "fade",
                     autoHeight: true,
