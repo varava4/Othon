@@ -670,8 +670,7 @@ body ::selection {
 .control-services {
   display: flex;
   gap: 1.25rem;
-  justify-content: space-between;
-  align-items: flex-end
+  justify-content: space-between
 }
 .control-services__title {
   line-height: 1.1;
@@ -684,7 +683,6 @@ body ::selection {
 .control-services__title span {
   cursor: pointer;
   position: relative;
-  margin-top: auto;
   display: flex;
   width: 100%;
   opacity: .32;
@@ -698,6 +696,7 @@ body ::selection {
   width: 100%
 }
 .control-services__buttons {
+  align-self: flex-end;
   display: flex;
   gap: .6875rem;
   margin-bottom: .9375rem
@@ -1469,6 +1468,7 @@ body ::selection {
     border-bottom: .125rem solid #f2683c
   }
   .control-services__title span {
+    margin-top: auto;
     display: none
   }
   .careers__inner {
