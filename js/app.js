@@ -4164,7 +4164,6 @@
                     speed: 800,
                     parallax: true,
                     effect: "fade",
-                    autoHeight: true,
                     navigation: {
                         prevEl: ".control-services__button--prev",
                         nextEl: ".control-services__button--next"
