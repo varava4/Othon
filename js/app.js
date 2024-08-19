@@ -4163,6 +4163,7 @@
                     spaceBetween: 100,
                     speed: 800,
                     parallax: true,
+                    autoHeight: true,
                     effect: "fade",
                     navigation: {
                         prevEl: ".control-services__button--prev",

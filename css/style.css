@@ -73,6 +73,9 @@ h6 {
   font-weight: inherit;
   font-size: inherit
 }
+body {
+  background-color: #fff
+}
 .lock body {
   overflow: hidden;
   touch-action: none;
@@ -614,6 +617,10 @@ body ::selection {
 .services__slider {
   flex-grow: 1
 }
+.services__wrapper {
+  overflow: hidden;
+  border-radius: 1.25rem
+}
 .services__slide {
   background: #fff;
   display: flex;
@@ -632,7 +639,9 @@ body ::selection {
   position: relative;
   z-index: 1;
   display: flex;
-  gap: 2.666667%
+  -webkit-column-gap: 2.666667%;
+  -moz-column-gap: 2.666667%;
+  column-gap: 2.666667%
 }
 .services__slide-image {
   border-radius: 1.25rem;
@@ -682,11 +691,21 @@ body ::selection {
 }
 .control-services__title span {
   cursor: pointer;
-  position: relative;
   display: flex;
   width: 100%;
   opacity: .32;
-  transition: opacity .5s
+  transition: opacity .5s;
+  position: relative
+}
+.control-services__title span::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: .0625rem;
+  bottom: -.3125rem;
+  left: 0;
+  background-color: #f2683c;
+  transition: width .5s
 }
 .control-services__title span.active {
   opacity: 1;
@@ -697,9 +716,10 @@ body ::selection {
 }
 .control-services__buttons {
   align-self: flex-end;
-  display: flex;
-  gap: .6875rem;
-  margin-bottom: .9375rem
+  display: flex
+}
+.control-services__button {
+  padding: .625rem
 }
 .control-services__button svg {
   width: 1.0625rem;
@@ -909,16 +929,6 @@ body ::selection {
   }
   .services__slide-image {
     position: relative
-  }
-  .control-services__title span::before {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: .0625rem;
-    bottom: -5px;
-    left: 0;
-    background-color: #f2683c;
-    transition: width .5s
   }
   .control-services__buttons {
     display: none
@@ -1141,6 +1151,9 @@ body ::selection {
   .control-services__title {
     font-size: 2.125rem
   }
+  .control-services__buttons {
+    gap: 3.125rem
+  }
   .careers__container {
     padding-top: 2.3125rem
   }
@@ -1331,6 +1344,9 @@ body ::selection {
   .bottom-story-about__link-sublabel {
     font-size: 1.125rem
   }
+  .control-services__buttons {
+    gap: .0000000625rem
+  }
   .careers__container {
     padding-top: 1.875rem
   }
@@ -1364,10 +1380,8 @@ body ::selection {
 }
 @media (max-width:81.24875em) {
   .services__slide-image-box {
-    flex-direction: column
-  }
-  .services__slide-text {
-    padding: 1.875rem 1.25rem 6.25rem 1.25rem
+    flex-direction: column;
+    row-gap: 1.25rem
   }
 }
 @media (max-width:61.99875em) {
@@ -1454,6 +1468,9 @@ body ::selection {
     border-radius: 1.25rem
   }
   .services__slide-text {
+    padding: 1.875rem 1.25rem 6.25rem 1.25rem
+  }
+  .services__slide-text {
     position: relative;
     z-index: 6;
     color: #fff
@@ -1464,8 +1481,12 @@ body ::selection {
   .control-services__title {
     font-size: 1.625rem
   }
-  .control-services__title {
-    border-bottom: .125rem solid #f2683c
+  .control-services__title span::before {
+    bottom: 0;
+    height: .125rem
+  }
+  .control-services__title span {
+    padding-bottom: .3125rem
   }
   .control-services__title span {
     margin-top: auto;
@@ -2215,6 +2236,16 @@ body ::selection {
   @supports not (font-size:clamp(1.125rem ,0.9298780488rem + 0.9756097561vw ,2.125rem)) {
     .bottom-story-about__link-sublabel {
       font-size: calc(1.125rem + 1 * (100vw - 20rem)/ 102.5)
+    }
+  }
+  @supports (gap:clamp(0.0000000625rem ,-0.6097560229rem + 3.0487804268vw ,3.125rem)) {
+    .control-services__buttons {
+      gap: clamp(.0000000625rem ,-.6097560229rem + 3.0487804268vw ,3.125rem)
+    }
+  }
+  @supports not (gap:clamp(0.0000000625rem ,-0.6097560229rem + 3.0487804268vw ,3.125rem)) {
+    .control-services__buttons {
+      gap: calc(.0000000625rem + 3.1249999375 * (100vw - 20rem)/ 102.5)
     }
   }
   @supports (padding-top:clamp(1.875rem ,1.7896341463rem + 0.4268292683vw ,2.3125rem)) {
