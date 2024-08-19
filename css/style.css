@@ -1390,6 +1390,9 @@ body ::selection {
     flex-direction: column;
     row-gap: 1.25rem
   }
+  .services__slide-image img {
+    aspect-ratio: 735/357
+  }
 }
 @media (max-width:61.99875em) {
   .footer__logo-box {
