@@ -2548,14 +2548,14 @@ body ::selection {
       margin-bottom: calc(1.875rem + 1.25 * (100vw - 20rem)/ 41.99875)
     }
   }
-  @supports (height:clamp(2.375rem ,8.0952930147rem + -9.2264650734vw ,6.25rem)) {
+  @supports (height:clamp(2.375rem ,9.0179209203rem + -10.7146046013vw ,6.875rem)) {
     .control-services__title {
-      height: clamp(2.375rem ,8.0952930147rem + -9.2264650734vw ,6.25rem)
+      height: clamp(2.375rem ,9.0179209203rem + -10.7146046013vw ,6.875rem)
     }
   }
-  @supports not (height:clamp(2.375rem ,8.0952930147rem + -9.2264650734vw ,6.25rem)) {
+  @supports not (height:clamp(2.375rem ,9.0179209203rem + -10.7146046013vw ,6.875rem)) {
     .control-services__title {
-      height: calc(6.25rem + -3.875 * (100vw - 20rem)/ 41.99875)
+      height: calc(6.875rem + -4.5 * (100vw - 20rem)/ 41.99875)
     }
   }
 }
