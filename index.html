@@ -10,7 +10,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20240819185033">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240819201353">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -620,16 +620,22 @@
 						</div>
 					</div>
 					<div class="top-footer__right right-top-footer">
-						<div class="right-top-footer__label">Contact Us</div>
-						<form class="right-top-footer__form" action="files/sendmail/sendmail.php" method="POST">
-							<input type="text" placeholder="Your Name" class="right-top-footer__input">
-							<input type="email" placeholder="Your Email" class="right-top-footer__input">
-							<input type="text" placeholder="Subject" class="right-top-footer__input">
-							<input type="text" placeholder="Your Message" class="right-top-footer__input">
-							<button type="submit" class="right-top-footer__button button">Send Message<span><svg>
-										<use xlink:href="img/icons/icons.svg#arrow"></use>
-									</svg></span></button>
-						</form>
+						<div class="right-top-footer__form-box" id="form-container">
+							<div class="right-top-footer__label">Contact Us</div>
+							<form class="right-top-footer__form" id="contact-form">
+								<input type="text" placeholder="Your Name" class="right-top-footer__input">
+								<input type="email" placeholder="Your Email" class="right-top-footer__input">
+								<input type="text" placeholder="Subject" class="right-top-footer__input">
+								<input type="text" placeholder="Your Message" class="right-top-footer__input">
+								<button type="submit" class="right-top-footer__button button">Send Message<span><svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg></span></button>
+							</form>
+						</div>
+						<div class="right-top-footer__thank-you" id="thank-you-message">
+							<div class="right-top-footer__message">Thank you!</div>
+							<div class="right-top-footer__submessage">One of our managers will contact you soon.</div>
+						</div>
 					</div>
 				</div>
 				<div class="footer__bottom bottom-footer">
@@ -731,7 +737,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240819185033"></script>
+	<script src="js/app.min.js?_v=20240819201353"></script>
 </body>
 
 </html>

@@ -4292,6 +4292,11 @@
                 muteButton.classList.add("about__sound-off");
             }
         }));
+        document.getElementById("contact-form").addEventListener("submit", (function(event) {
+            event.preventDefault();
+            document.getElementById("form-container").style.display = "none";
+            document.getElementById("thank-you-message").style.display = "block";
+        }));
         window["FLS"] = true;
         addLoadedClass();
         menuInit();
