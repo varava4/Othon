@@ -642,6 +642,7 @@ body ::selection {
   position: relative;
   z-index: 1;
   display: flex;
+  height: 100%;
   -webkit-column-gap: 2.666667%;
   -moz-column-gap: 2.666667%;
   column-gap: 2.666667%
