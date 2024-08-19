@@ -308,18 +308,18 @@ body ::selection {
   grid-template-columns: auto 1fr;
   gap: 1.25rem
 }
-.right-top-footer__label {
-  line-height: 1.1;
-  letter-spacing: -.01em;
-  margin-bottom: 1.875rem
-}
-.right-top-footer__form {
+.right-top-footer form {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   -webkit-column-gap: .875rem;
   -moz-column-gap: .875rem;
   column-gap: .875rem;
   row-gap: 1.1875rem
+}
+.right-top-footer__label {
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  margin-bottom: 1.875rem
 }
 .right-top-footer__input {
   background-color: #fff;
@@ -1734,7 +1734,7 @@ body ::selection {
   .item-footer__inner {
     grid-template-columns: auto auto
   }
-  .right-top-footer__form {
+  .right-top-footer form {
     grid-template-columns: repeat(1,1fr)
   }
   .left-bootom-footer__items {
