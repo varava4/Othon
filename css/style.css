@@ -691,27 +691,8 @@ body ::selection {
 }
 .control-services__title span {
   cursor: pointer;
-  display: flex;
-  width: 100%;
   opacity: .32;
   transition: opacity .5s;
-  position: relative
-}
-.control-services__title span::before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: .0625rem;
-  bottom: -.3125rem;
-  left: 0;
-  background-color: #f2683c;
-  transition: width .5s
-}
-.control-services__title span.active {
-  opacity: 1;
-  display: block
-}
-.control-services__title span.active::before {
   width: 100%
 }
 .control-services__buttons {
@@ -929,6 +910,28 @@ body ::selection {
   }
   .services__slide-image {
     position: relative
+  }
+  .control-services {
+    padding-bottom: .9375rem
+  }
+  .control-services__title span {
+    position: relative
+  }
+  .control-services__title span::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: .0625rem;
+    bottom: -.4375rem;
+    left: 0;
+    background-color: #f2683c;
+    transition: width .5s
+  }
+  .control-services__title span.active {
+    opacity: 1
+  }
+  .control-services__title span.active::before {
+    width: 100%
   }
   .control-services__buttons {
     display: none
@@ -1481,16 +1484,63 @@ body ::selection {
   .control-services__title {
     font-size: 1.625rem
   }
+  .control-services__title {
+    width: 100%
+  }
+  .control-services__title span {
+    display: none;
+    position: relative;
+    -webkit-animation: title-tablet-animate 1s;
+    animation: title-tablet-animate 1s
+  }
+  @-webkit-keyframes title-tablet-animate {
+    from {
+      opacity: 0
+    }
+    to {
+      opacity: 1
+    }
+  }
+  @keyframes title-tablet-animate {
+    from {
+      opacity: 0
+    }
+    to {
+      opacity: 1
+    }
+  }
   .control-services__title span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: .125rem;
     bottom: 0;
-    height: .125rem
+    left: 0;
+    background-color: #f2683c;
+    -webkit-animation: line-tablet-animate 1s;
+    animation: line-tablet-animate 1s
   }
-  .control-services__title span {
-    padding-bottom: .3125rem
+  @-webkit-keyframes line-tablet-animate {
+    from {
+      width: 0%
+    }
+    to {
+      width: 100%
+    }
   }
-  .control-services__title span {
+  @keyframes line-tablet-animate {
+    from {
+      width: 0%
+    }
+    to {
+      width: 100%
+    }
+  }
+  .control-services__title span.active {
     margin-top: auto;
-    display: none
+    padding-bottom: .625rem;
+    display: block;
+    opacity: 1
   }
   .careers__inner {
     flex-direction: column
@@ -2584,9 +2634,6 @@ body ::selection {
   }
   .services__slide-link:hover svg path {
     fill: #fff
-  }
-  .control-services__title span:hover {
-    opacity: 1
   }
   .offices-careers__link:hover {
     text-decoration: underline
