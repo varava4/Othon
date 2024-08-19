@@ -546,6 +546,9 @@ body ::selection {
   display: flex;
   gap: 1.25rem
 }
+.story-about__image {
+  flex: 50%
+}
 .story-about__image img {
   display: block;
   width: 100%;
@@ -1730,7 +1733,7 @@ body ::selection {
     flex-direction: column
   }
   .story-about__image {
-    flex: 50%
+    flex: 100%
   }
   .story-about__icon {
     left: 3%
