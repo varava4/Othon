@@ -4273,29 +4273,28 @@
         "use strict";
         const video = document.getElementById("myVideo");
         const muteButton = document.getElementById("mute-button");
-        const observer = new IntersectionObserver((entries => {
-            entries.forEach((entry => {
-                if (entry.isIntersecting) video.play(); else video.pause();
+        const contactForm = document.getElementById("contact-form");
+        const formContainer = document.getElementById("form-container");
+        const thankYouMessage = document.getElementById("thank-you-message");
+        if (video && muteButton) {
+            const observer = new IntersectionObserver((entries => {
+                entries.forEach((entry => {
+                    if (entry.isIntersecting) video.play(); else video.pause();
+                }));
+            }), {
+                threshold: .5
+            });
+            observer.observe(video);
+            muteButton.addEventListener("click", (() => {
+                video.muted = !video.muted;
+                muteButton.classList.toggle("about__sound-on", !video.muted);
+                muteButton.classList.toggle("about__sound-off", video.muted);
             }));
-        }), {
-            threshold: .5
-        });
-        observer.observe(video);
-        muteButton.addEventListener("click", (() => {
-            if (video.muted) {
-                video.muted = false;
-                muteButton.classList.remove("about__sound-off");
-                muteButton.classList.add("about__sound-on");
-            } else {
-                video.muted = true;
-                muteButton.classList.remove("about__sound-on");
-                muteButton.classList.add("about__sound-off");
-            }
-        }));
-        document.getElementById("contact-form").addEventListener("submit", (function(event) {
+        }
+        if (contactForm) contactForm.addEventListener("submit", (function(event) {
             event.preventDefault();
-            document.getElementById("form-container").style.display = "none";
-            document.getElementById("thank-you-message").style.display = "block";
+            if (formContainer) formContainer.style.display = "none";
+            if (thankYouMessage) thankYouMessage.style.display = "block";
         }));
         window["FLS"] = true;
         addLoadedClass();
